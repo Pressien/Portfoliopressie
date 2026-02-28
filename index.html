@@ -1,0 +1,89 @@
+
+Index · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prathishta's Portfolio</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- THREE JS CANVAS -->
+  <canvas class="webgl"></canvas>
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash">
+    <div class="splash-noise"></div>
+    <div class="splash-grid"></div>
+    <div class="splash-content">
+      <p class="splash-sys">SYS:BOOT // INITIALIZING...</p>
+      <h1 class="splash-title">
+        <span class="splash-line1">WELCOME TO</span>
+        <span class="splash-line2">PRATHISHTA'S</span>
+        <span class="splash-line3">PORTFOLIO</span>
+      </h1>
+      <div class="splash-bar-wrap">
+        <div class="splash-bar">
+          <div class="splash-bar-fill" id="splashBarFill"></div>
+        </div>
+        <p class="splash-loading-text" id="splashLoadingText">LOADING ASSETS...</p>
+      </div>
+      <button class="splash-enter" id="splashEnter" style="display:none;">
+        [ ENTER ]
+      </button>
+    </div>
+    <div class="splash-scanline"></div>
+  </div>
+
+  <!-- ABOUT PANEL -->
+  <div id="aboutPanel">
+    <div class="about-tag">// ABOUT.ME</div>
+    <h2 class="about-name">PRATHISHTA</h2>
+    <p class="about-bio">
+      I build at the intersection of<br>
+      physical and digital.<br><br>
+      Crafting <strong>TouchDesigner</strong> visuals,<br>
+      <strong>projection mapped</strong> installations,<br>
+      <strong>IoT solutions</strong> that connect<br>
+      the real world to data, and<br>
+      <strong>web experiences</strong> that blur<br>
+      the line between screen and space.
+    </p>
+    <div class="about-divider"></div>
+    <div class="about-stats">
+      <div class="stat">
+        <span class="stat-val">TD</span>
+        <span class="stat-label">Visuals</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">IoT</span>
+        <span class="stat-label">Solutions</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">3D</span>
+        <span class="stat-label">Web</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTRUCTIONS -->
+  <div id="instructions">
+    <div class="instruction-item">
+      // Click <strong>laptop</strong> to see my projects
+    </div>
+    <div class="instruction-item">
+      // Click <strong>telephone</strong> for contact details
+    </div>
+    <div class="instruction-item">
+      // Drag to explore the room
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
