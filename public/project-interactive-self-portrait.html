@@ -111,21 +111,21 @@
       color: var(--muted); text-transform: uppercase; margin-bottom: 20px;
     }
 
-    /* Hero GIF full width */
     .media-hero {
-      width: 100%; aspect-ratio: 16/9;
+      width: 100%;
       background: var(--card-bg);
       border: 1px solid rgba(255,45,120,0.25);
       overflow: hidden; position: relative; margin-bottom: 16px;
     }
 
-    .media-hero img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .media-hero img { width: 100%; height: auto; display: block; }
 
     .media-hero::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(135deg, transparent 40%, rgba(255,45,120,0.04) 50%, transparent 60%);
       background-size: 200% 200%;
       animation: shimmer 3s linear infinite;
+      pointer-events: none;
     }
 
     @keyframes shimmer {
@@ -133,21 +133,12 @@
       to { background-position: -200% -200%; }
     }
 
-    .placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 8px;
-    }
-
-    .placeholder-icon { font-size: 11px; letter-spacing: 4px; color: rgba(255,45,120,0.4); }
-    .placeholder-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-align: center; padding: 0 10px; }
-
     .media-grid {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 16px; margin-bottom: 8px;
     }
 
-    @media (max-width: 600px) { .media-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .media-grid { grid-column: 1fr; } }
 
     .media-item {
       background: var(--card-bg);
@@ -245,48 +236,46 @@
     </nav>
 
     <div class="project-header">
-      <p class="project-tag">TouchDesigner // Interactive // Generative</p>
+      <p class="project-tag">Python // Data Visualisation // Personal Data</p>
       <h1 class="project-title">INTERACTIVE<br><span>SELF PORTRAIT</span></h1>
       <div class="project-meta">
-        <span class="meta-tag">TouchDesigner</span>
-        <span class="meta-tag">Computer Vision</span>
-        <span class="meta-tag">Generative</span>
-        <span class="meta-tag">Interactive</span>
-        <span class="meta-tag">Real-time</span>
+        <span class="meta-tag">Python Dash</span>
+        <span class="meta-tag">Spotify API</span>
+        <span class="meta-tag">Data Analysis</span>
+        <span class="meta-tag">Personal Data</span>
+        <span class="meta-tag">Interactive Dashboard</span>
       </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- MEDIA: Hero GIF + 2 images below -->
     <div class="media-section">
       <p class="section-label">// documentation</p>
 
       <div class="media-hero">
-  <img src="/images/Dash.gif" alt="As Above So Below live demo" />
-</div>
-<p class="media-label" style="margin-bottom:32px;">// live installation demo</p>
+        <img src="/images/Dash.gif" alt="Interactive Self Portrait demo" />
+      </div>
+      <p class="media-label" style="margin-bottom:32px;">// live dashboard demo</p>
 
       <div class="media-grid">
-  <div class="media-item" style="aspect-ratio: 16/9; grid-column: 1 / -1;">
-    <img src="/images/newdash.jpg" alt="Dashboard output" />
-  </div>
-</div>
-<p class="media-label" style="margin-top: 8px;">// process & output stills</p>
+        <div class="media-item" style="grid-column: 1 / -1;">
+          <img src="/images/newdash.jpg" alt="Dashboard output" />
+        </div>
+      </div>
+      <p class="media-label" style="margin-top: 8px;">// process & output stills</p>
     </div>
 
-    <!-- CONTENT -->
     <div class="content-section">
 
       <div class="content-block" style="margin-bottom:24px;">
         <p class="block-title">// Overview</p>
         <p class="block-text">
-          <strong>Interactive Self Portrait</strong> Interactive Self Portrait is a personal data visualisation project that explores 
-the relationship between emotional states, music consumption and hormonal cycles. 
-Using data scraped from Spotify and the Flo app, the project maps how internal 
-states influence media choices — and how mood, in turn, connects to physical symptoms.
-
-The result is a visual story that is both deeply private and universally relatable.
+          <strong>Interactive Self Portrait</strong> is a personal data visualisation project that explores
+          the relationship between emotional states, music consumption and hormonal cycles.
+          Using data scraped from Spotify and the Flo app, the project maps how internal
+          states influence media choices — and how mood, in turn, connects to physical symptoms.
+          <br><br>
+          The result is a visual story that is both deeply private and universally relatable.
         </p>
       </div>
 
@@ -294,36 +283,27 @@ The result is a visual story that is both deeply private and universally relatab
         <div class="content-block">
           <p class="block-title">// How It Works</p>
           <ul class="block-list">
-            <li>Spotify and Flo data was scraped and analysed to find patterns across mood, 
-  music traits and physical symptoms.</li>
-            <li>A scatter plot maps songs by valence and energy, colour coded by mood state 
-  (Sad, Happy, Anxious) — revealing how emotional state shapes listening behaviour</li>
-            <li>A second visualisation links Flo tracked moods directly to physical symptoms 
-  like back pain, cramps and bloating,surfacing the connection between 
-  mental state and body.</li>
-  <li>The full interface was built in Python Dash, designed to make these 
-  connections clear and navigable</li>
+            <li>Spotify and Flo data was scraped and analysed to find patterns across mood, music traits and physical symptoms.</li>
+            <li>A scatter plot maps songs by valence and energy, colour coded by mood state (Sad, Happy, Anxious) — revealing how emotional state shapes listening behaviour.</li>
+            <li>A second visualisation links Flo tracked moods directly to physical symptoms like back pain, cramps and bloating, surfacing the connection between mental state and body.</li>
+            <li>The full interface was built in Python Dash, designed to make these connections clear and navigable.</li>
           </ul>
         </div>
 
         <div class="content-block">
           <p class="block-title">// Context</p>
           <ul class="block-list">
-            <li>This project began as a curiosity does the music I reach for actually 
-  reflect how I feel?</li>
-            <li>The dataset made the answer undeniable. Music choices, mood and physical 
-  symptoms are deeply interconnected.
-?</li>
-            <li>It became an exercise in self-introspection using data to reveal personal 
-  truths in a way that feels both intimate and analytical.</li>
-  <li>Presented as part of a data visualisation and personal narrative brief.</li>
+            <li>This project began as a curiosity — does the music I reach for actually reflect how I feel?</li>
+            <li>The dataset made the answer undeniable. Music choices, mood and physical symptoms are deeply interconnected.</li>
+            <li>It became an exercise in self-introspection — using data to reveal personal truths in a way that feels both intimate and analytical.</li>
+            <li>Presented as part of a data visualisation and personal narrative brief.</li>
           </ul>
         </div>
       </div>
 
     </div>
 
-    <a href="/projects.html" class="back-btn">← Back to Projects</a>
+    <a href="/projects.html" class="back-btn">&#8592; Back to Projects</a>
 
   </div>
 </body>
